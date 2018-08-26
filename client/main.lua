@@ -222,9 +222,9 @@ Citizen.CreateThread( function()
 				ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
 					local sex = nil
 					if skin.sex == 0 then
-						sex = "mężczyznę"
+						sex = "mężczyznę" --male/change it to your language
 					else
-						sex = "kobietę"
+						sex = "kobietę" --female/change it to your language
 					end
 					TriggerServerEvent('drugsInProgressPos', plyPos.x, plyPos.y, plyPos.z)
 					if s2 == 0 then
