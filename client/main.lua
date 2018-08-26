@@ -61,21 +61,22 @@ Citizen.CreateThread(function()
 									TriggerServerEvent('sell:check')
 									if playerHasDrugs and IsControlJustPressed(1, 38) and sold == false and selling == false then 
 										--PED REJECT OFFER
-										local random = math.random(1, 12)
-										if random == 3 or random == 7 or random == 11 or random == 5 then
+										local random = math.random(1, Config.PedRejectPercent)
+										-- print(random)
+										if random == Config.PedRejectPercent then
 											ESX.ShowNotification(_U('reject'))
 											oldped = ped
 											--PED CALLING COPS
 											if Config.CallCops then
-												local randomReport = math.random(1, 5)
-												if randomReport > 2 then
+												local randomReport = math.random(1, Config.CallCopsPercent)
+												-- print(randomReport)
+												if randomReport == Config.CallCopsPercent then
 													TriggerServerEvent("drugsNotify")
-													print(randomReport)
 												end
 											end
 											TriggerEvent("sold")
 										--PED ACCEPT OFFER
-										elseif random ~= 3 or random ~= 7 or random ~= 11 or random ~= 5 then
+										else
 											SetEntityAsMissionEntity(ped)
 											ClearPedTasks(ped)
 											FreezeEntityPosition(ped,true)
