@@ -9,6 +9,7 @@ AddEventHandler('sell:sellDrugs', function()
 	local weedqty = xPlayer.getInventoryItem('weed_pooch').count
 	local methqty = xPlayer.getInventoryItem('meth_pooch').count
 	local cokeqty = xPlayer.getInventoryItem('coke_pooch').count
+	local opiuqty = xPlayer.getInventoryItem('opium_pooch').count
 	local payment = math.random(100,300)
 	local x = 0
 	local blackMoney = 0
@@ -58,16 +59,28 @@ AddEventHandler('sell:sellDrugs', function()
 			x = math.random(1,5)
 		end
 	xPlayer.removeInventoryItem('coke_pooch', x)
+		
+	elseif opiuqty > 0 and Config.SellOpiu then
+	drugType = "opium"
+		if opiuqty == 1 then
+			x = 1
+		elseif opiuqty == 2 then
+			x = math.random(1,2)
+		elseif opiuqty == 3 then
+			x = math.random(1,3)
+		elseif opiuqty == 4 then
+			x = math.random(1,4)
+		elseif opiuqty >= 5 then
+			x = math.random(1,5)
+		end
+	xPlayer.removeInventoryItem('opium_pooch', x)
+	else
+		TriggerClientEvent('nomoredrugs', _source)
 	end
 	
 	blackMoney = payment * x
 	xPlayer.addAccountMoney('black_money', blackMoney)
 	TriggerClientEvent('showSellInfo', _source, x, blackMoney, drugType)
-	
-	if weedqty == 0 and methqty == 0 and cokeqty == 0 then
-		TriggerClientEvent('nomoredrugs', _source)
-	end
-	
 	TriggerClientEvent('sold', _source)
 end)
 
@@ -79,11 +92,15 @@ AddEventHandler('sell:check', function()
 	local weedqty = xPlayer.getInventoryItem('weed_pooch').count
 	local methqty = xPlayer.getInventoryItem('meth_pooch').count
 	local cokeqty = xPlayer.getInventoryItem('coke_pooch').count
+	local opiuqty = xPlayer.getInventoryItem('opium_pooch').count
 		
 	if weedqty > 0 and Config.SellWeed or 
 	methqty > 0 and Config.SellMeth or 
-	cokeqty > 0 and Config.SellCoke then
-		TriggerClientEvent('playerhasdrugs', _source)	
+	cokeqty > 0 and Config.SellCoke or
+	opiuqty > 0 and Config.SellOpiu then
+		TriggerClientEvent('playerhasdrugs', _source)
+	else
+		TriggerClientEvent('nomoredrugs', _source)
 	end
 end)
 

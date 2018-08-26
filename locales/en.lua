@@ -8,4 +8,5 @@ Locales ['en'] = {
 	['weed_pooch'] = ' pooch of ~g~weed~s~ for~r~ ',
 	['meth_pooch'] = ' pooch of ~g~meth~s~ for~r~ ',
 	['coke_pooch'] = ' pooch of ~g~coke~s~ for~r~ ',
+	['opium_pooch'] = ' pooch of ~g~opium~s~ for~r~ ',
 }

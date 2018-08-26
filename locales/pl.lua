@@ -5,7 +5,8 @@ Locales ['pl'] = {
 	['too_far_away'] = 'Oddaliłeś się! Sprzedawanie ~r~anulowane',
 	['remained'] = 'Pozostało~b~ ',
 	['you_have_sold'] = 'Sprzedałeś ',
-	['weed_pooch'] = ' paczki/e ~g~marichuany~s~ za~r~ ',
-	['meth_pooch'] = ' paczki/e ~g~metamfetaminy~s~ za~r~ ',
-	['coke_pooch'] = ' paczki/e ~g~kokainy~s~ za~r~ ',
+	['weed_pooch'] = ' paczki/ek ~g~marichuany~s~ za~r~ ',
+	['meth_pooch'] = ' paczki/ek ~g~metamfetaminy~s~ za~r~ ',
+	['coke_pooch'] = ' paczki/ek ~g~kokainy~s~ za~r~ ',
+	['opium_pooch'] = ' paczki/ek ~g~opium~s~ za~r~ ',
 }

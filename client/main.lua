@@ -157,6 +157,8 @@ AddEventHandler('showSellInfo', function(count, blackMoney, drugType)
 		ESX.ShowNotification(_U('you_have_sold') .. count .. _U('meth_pooch') .. blackMoney .. '$')
 	elseif drugType == "coke" then
 		ESX.ShowNotification(_U('you_have_sold') .. count .. _U('coke_pooch') .. blackMoney .. '$')
+	elseif drugType == "opium" then
+		ESX.ShowNotification(_U('you_have_sold') .. count .. _U('opium_pooch') .. blackMoney .. '$')
 	end
 end)
 
