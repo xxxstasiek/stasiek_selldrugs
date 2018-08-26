@@ -107,7 +107,7 @@ end)
 
 RegisterServerEvent('drugsNotify')
 AddEventHandler('drugsNotify', function()
-	TriggerClientEvent("drugsEnableDispatch", source)
+	TriggerClientEvent("drugsEnable", source)
 end)
 
 --if you need you can translate it to your language
