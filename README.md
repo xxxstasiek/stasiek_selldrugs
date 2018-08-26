@@ -30,7 +30,7 @@ Sorry for my english.
 	
 	Config.SellCoke = true	-- if true, players can sell coke
 	
-	Config.SellOpiu = true	-- if true, players can sell coke
+	Config.SellOpiu = true	-- if true, players can sell opium
 
 2. You can edit 'locales/en.lua' to your language and send it to fivem forum on my topic
 
