@@ -67,8 +67,8 @@ Citizen.CreateThread(function()
 											oldped = ped
 											--PED CALLING COPS
 											if Config.CallCops then
-												local randomReport = math.random(1, 4)
-												if randomReport > 1 then
+												local randomReport = math.random(1, 5)
+												if randomReport > 3 then
 													TriggerServerEvent("drugsNotify")
 													print(randomReport)
 												end
