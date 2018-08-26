@@ -24,3 +24,4 @@ It's 100% WORKING with ESX! Plugin has been created by Stasiek, witch allows pla
 
 # ScreenShots, Forum & More
 https://strefaparadise.pl/forums/topic/fivem-esx-stasiek_selldrugs/
+https://forum.fivem.net/t/esx-stasiek-selldrugs-to-npc-weed-meth-dispatch-new/150547?u=stasiek
