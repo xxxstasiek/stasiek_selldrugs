@@ -150,11 +150,13 @@ AddEventHandler('sold', function()
 end)
 
 RegisterNetEvent('showSellInfo')
-AddEventHandler('showSellInfo', function(count, blackMoney, itsWeed)
-	if itsWeed then
+AddEventHandler('showSellInfo', function(count, blackMoney, drugType)
+	if drugType == "weed" then
 		ESX.ShowNotification(_U('you_have_sold') .. count .. _U('weed_pooch') .. blackMoney .. '$')
-	else
+	elseif drugType == "meth" then
 		ESX.ShowNotification(_U('you_have_sold') .. count .. _U('meth_pooch') .. blackMoney .. '$')
+	elseif drugType == "coke" then
+		ESX.ShowNotification(_U('you_have_sold') .. count .. _U('coke_pooch') .. blackMoney .. '$')
 	end
 end)
 

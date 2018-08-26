@@ -7,4 +7,5 @@ Locales ['en'] = {
 	['you_have_sold'] = 'You have sold ',
 	['weed_pooch'] = ' pooch of ~g~weed~s~ for~r~ ',
 	['meth_pooch'] = ' pooch of ~g~meth~s~ for~r~ ',
+	['coke_pooch'] = ' pooch of ~g~coke~s~ for~r~ ',
 }

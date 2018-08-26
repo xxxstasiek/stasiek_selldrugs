@@ -7,4 +7,5 @@ Locales ['pl'] = {
 	['you_have_sold'] = 'Sprzedałeś ',
 	['weed_pooch'] = ' paczki/e ~g~marichuany~s~ za~r~ ',
 	['meth_pooch'] = ' paczki/e ~g~metamfetaminy~s~ za~r~ ',
+	['coke_pooch'] = ' paczki/e ~g~kokainy~s~ za~r~ ',
 }
