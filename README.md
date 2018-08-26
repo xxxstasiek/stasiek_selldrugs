@@ -36,7 +36,7 @@ Sorry for my english.
 
 3. In 'server/main.lua' at line 77 and 82  and in 'client/main.lua' in line 242 and 244 there's a lines you should change to your language!
 
-4. You have to have weed_pooch or meth_pooch or coke_pooch in your inventory and in your database in 'items' 
+4. You have to have weed_pooch or meth_pooch or coke_pooch or opium_pooch in your inventory and in your database in 'items' 
 
 My plugin is based on 'onlyserenity/drugsToNPCs' and 'nynjardin/outlawalert'
 
