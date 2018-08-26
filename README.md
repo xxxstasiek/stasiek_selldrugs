@@ -14,6 +14,12 @@ It's 100% WORKING with ESX! Plugin has been created by Stasiek, witch allows pla
     Config.CallCops = true  -- if true and if ped reject your offer then there is 40% chance that ped will call cops
 
     Config.Locale = 'en'    -- your language, It would be nice if you send me your translation on fivem forum
+	
+	Config.SellWeed = true	-- if true, players can sell weed
+	
+	Config.SellMeth = true	-- if true, players can sell meth
+	
+	Config.SellCoke = true	-- if true, players can sell coke
 
 2. You can edit 'locales/en.lua' to your language and send it to fivem forum on my topic
 
