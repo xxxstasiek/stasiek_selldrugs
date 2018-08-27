@@ -10,6 +10,8 @@ client_scripts {
 	'locales/pl.lua',
 	'locales/en.lua',
 	'locales/it.lua',
+	'locales/fr.lua',
+	'locales/sv.lua',
 	'client/main.lua',
 	'config.lua'
 }

@@ -1,0 +1,16 @@
+Locales ['sv'] = {
+	['input'] = 'Tryck ~INPUT_PICKUP~ för att sälja droger',
+	['reject'] = 'Personen är ~r~INTE~s~ intresserad',
+	['no_more_drugs'] = '~r~Du har inte~s~ mer ~g~droger!',
+	['too_far_away'] = 'Du är för långt ifrån! Försäljning ~r~avslutad',
+	['remained'] = 'Tid kvar~b~ ',
+	['you_have_sold'] = 'Du har sålt ',
+	['weed_pooch'] = ' ~g~Gräs~s~ för~r~ ',
+	['meth_pooch'] = ' ~g~Metamfetamin~s~ för~r~ ',
+	['coke_pooch'] = ' ~g~Kokain~s~ for~r~ ',
+	['opium_pooch'] = ' ~g~Opium~s~ for~r~ ',
+	['weed'] = ' ~g~Gräs~s~ för~r~ ',
+	['meth'] = ' ~g~Metamfetamin~s~ för~r~ ',
+	['coke'] = ' ~g~Kokain~s~ for~r~ ',
+	['opium'] = ' ~g~Opium~s~ for~r~ ',
+}

@@ -28,6 +28,10 @@ Sorry for my english.
 	
 	Config.PedRejectPercent = 1 -- (min1) if 1 ped reject offer=100%, 2=50%, 3=33%, 4=25%, 5=20%
 	
+	Config.SellPooch = true -- if true, players can sell pooch like weed_pooch, meth_pooch
+	
+	Config.SellSingle = true -- if true, players can sell single item like weed, meth	
+	
 	Config.SellWeed = true	-- if true, players can sell weed
 	
 	Config.SellMeth = true	-- if true, players can sell meth

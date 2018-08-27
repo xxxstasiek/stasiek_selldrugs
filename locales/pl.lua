@@ -9,4 +9,8 @@ Locales ['pl'] = {
 	['meth_pooch'] = ' paczki/ek ~g~metamfetaminy~s~ za~r~ ',
 	['coke_pooch'] = ' paczki/ek ~g~kokainy~s~ za~r~ ',
 	['opium_pooch'] = ' paczki/ek ~g~opium~s~ za~r~ ',
+	['weed'] = ' ~g~marichuany~s~ za~r~ ',
+	['meth'] = ' ~g~metamfetaminy~s~ za~r~ ',
+	['coke'] = ' ~g~kokainy~s~ za~r~ ',
+	['opium'] = ' ~g~opium~s~ za~r~ ',
 }
