@@ -57,7 +57,7 @@ Citizen.CreateThread(function()
 			 				local pedType = GetPedType(ped)
 			 				if pedType ~= 28 and IsPedAPlayer(ped) == false then
 				 				currentped = pos
-							 	if distance <= 3 and ped  ~= GetPlayerPed(-1) and ped ~= oldped then
+							 	if distance <= 3 and ped  ~= GetPlayerPed(-1) and ped ~= oldped and IsControlJustPressed(1, 38) then
 									TriggerServerEvent('sell:check')
 									if playerHasDrugs and IsControlJustPressed(1, 38) and sold == false and selling == false then 
 										--PED REJECT OFFER

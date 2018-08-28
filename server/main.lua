@@ -19,7 +19,7 @@ AddEventHandler('sell:sellDrugs', function()
 	local blackMoney = 0
 	local drugType
 	
-	if Config.SellWeed then
+	if Config.SellWeed and weedqty > 0 or weedqtySingle > 0 then
 		if weedqty > 0 and Config.SellPooch then
 		drugType = "weedpooch"
 			if weedqty == 1 then
@@ -49,7 +49,7 @@ AddEventHandler('sell:sellDrugs', function()
 			end
 		xPlayer.removeInventoryItem('weed', x)
 		end
-	elseif Config.SellMeth then
+	elseif Config.SellMeth and methqty > 0 or methqtySingle > 0 then
 			if methqty > 0 and Config.SellPooch then
 		drugType = "methpooch"
 			if methqty == 1 then
@@ -63,7 +63,7 @@ AddEventHandler('sell:sellDrugs', function()
 			elseif methqty >= 5 then
 				x = math.random(1,5)
 			end
-		xPlayer.removeInventoryItem('weed_pooch', x)
+		xPlayer.removeInventoryItem('meth_pooch', x)
 		elseif methqtySingle > 0 and Config.SellSingle then
 		drugType = "meth"
 			if methqtySingle == 1 then
@@ -79,7 +79,7 @@ AddEventHandler('sell:sellDrugs', function()
 			end
 		xPlayer.removeInventoryItem('meth', x)
 		end
-	elseif Config.SellCoke then
+	elseif Config.SellCoke and cokeqty > 0 or cokeqtySingle > 0 then
 			if cokeqty > 0 and Config.SellPooch then
 		drugType = "cokepooch"
 			if cokeqty == 1 then
@@ -109,7 +109,7 @@ AddEventHandler('sell:sellDrugs', function()
 			end
 		xPlayer.removeInventoryItem('coke', x)
 		end
-	elseif Config.SellOpiu then
+	elseif Config.SellOpiu and opiuqty > 0 or opiuqtySingle > 0 then
 			if opiuqty > 0 and Config.SellPooch then
 		drugType = "opiumpooch"
 			if opiuqty == 1 then
@@ -152,6 +152,7 @@ RegisterServerEvent('sell:check')
 AddEventHandler('sell:check', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
+	local xPlayers = ESX.GetPlayers()
 	local weedqty = xPlayer.getInventoryItem('weed_pooch').count
 	local weedqtySingle = xPlayer.getInventoryItem('weed').count
 	local methqty = xPlayer.getInventoryItem('meth_pooch').count
@@ -161,24 +162,40 @@ AddEventHandler('sell:check', function()
 	local opiuqty = xPlayer.getInventoryItem('opium_pooch').count
 	local opiuqtySingle = xPlayer.getInventoryItem('opium').count
 	
-	if Config.SellPooch or Config.SellSingle then
-		if Config.SellWeed then
-			if weedqty > 0 or weedqtySingle > 0 then
-				TriggerClientEvent('playerhasdrugs', _source)
-			end
-		elseif Config.SellMeth then
-			if methqty > 0 or methqtySingle > 0 then
-				TriggerClientEvent('playerhasdrugs', _source)
-			end
-		elseif Config.SellCoke then
-			if cokeqty > 0 or cokeqtySingle > 0 then
-				TriggerClientEvent('playerhasdrugs', _source)
-			end
-		elseif Config.SellOpiu then
-			if opiuqty > 0 or opiuqtySingle > 0 then
-				TriggerClientEvent('playerhasdrugs', _source)
+	--check cops count on server
+	local cops = 0
+		for i=1, #xPlayers, 1 do
+ 		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+ 		if xPlayer.job.name == 'police' then
+				cops = cops + 1
 			end
 		end
+		
+	if cops >= Config.CopsRequiredToSell then
+		if Config.SellPooch or Config.SellSingle then
+			if Config.SellWeed then
+				if weedqty > 0 or weedqtySingle > 0 then
+					TriggerClientEvent('playerhasdrugs', _source)
+				end
+			end
+			if Config.SellMeth then
+				if methqty > 0 or methqtySingle > 0 then
+					TriggerClientEvent('playerhasdrugs', _source)
+				end
+			end
+			if Config.SellCoke then
+				if cokeqty > 0 or cokeqtySingle > 0 then
+					TriggerClientEvent('playerhasdrugs', _source)
+				end
+			end
+			if Config.SellOpiu then
+				if opiuqty > 0 or opiuqtySingle > 0 then
+					TriggerClientEvent('playerhasdrugs', _source)
+				end
+			end
+		end
+	else
+		TriggerClientEvent('esx:showNotification', _source, _U('must_be') .. Config.CopsRequiredToSell .. _U('to_sell_drugs'))
 	end
 end)
 
