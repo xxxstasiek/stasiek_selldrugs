@@ -14,7 +14,6 @@ AddEventHandler('sell:sellDrugs', function()
 	local cokeqtySingle = xPlayer.getInventoryItem('coke').count
 	local opiuqty = xPlayer.getInventoryItem('opium_pooch').count
 	local opiuqtySingle = xPlayer.getInventoryItem('opium').count
-	local payment = math.random(100,300)
 	local x = 0
 	local blackMoney = 0
 	local drugType
@@ -139,9 +138,29 @@ AddEventHandler('sell:sellDrugs', function()
 			end
 		xPlayer.removeInventoryItem('opium', x)
 		end
+	else
+		TriggerClientEvent('nomoredrugs', _source)
+		return
 	end
 	
-	blackMoney = payment * x
+	if drugType=="weedpooch" then	--pooch
+		blackMoney = Config.WeedPrice * 6 * x
+	elseif drugType=="methpooch" then
+		blackMoney = Config.MethPrice * 6 * x
+	elseif drugType=="cokepooch" then
+		blackMoney = Config.CokePrice * 6 * x
+	elseif drugType=="opiumpooch" then
+		blackMoney = Config.OpiuPrice * 6 * x
+	elseif drugType=="weed" then	--single
+		blackMoney = Config.WeedPrice * x
+	elseif drugType=="meth" then
+		blackMoney = Config.MethPrice * x
+	elseif drugType=="coke" then
+		blackMoney = Config.CokePrice * x
+	elseif drugType=="opium" then
+		blackMoney = Config.OpiuPrice * x
+	end
+	
 	xPlayer.addAccountMoney('black_money', blackMoney)
 	TriggerClientEvent('showSellInfo', _source, x, blackMoney, drugType)
 	TriggerClientEvent('sold', _source)
@@ -164,34 +183,46 @@ AddEventHandler('sell:check', function()
 	
 	--check cops count on server
 	local cops = 0
-		for i=1, #xPlayers, 1 do
+	for i=1, #xPlayers, 1 do
  		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
  		if xPlayer.job.name == 'police' then
 				cops = cops + 1
-			end
 		end
-		
+	end
+	
+	local drugsChecker
 	if cops >= Config.CopsRequiredToSell then
 		if Config.SellPooch or Config.SellSingle then
 			if Config.SellWeed then
 				if weedqty > 0 or weedqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
+					drugsChecker = drugsChecker + 1
 				end
 			end
 			if Config.SellMeth then
 				if methqty > 0 or methqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
+					drugsChecker = drugsChecker + 1
 				end
 			end
 			if Config.SellCoke then
 				if cokeqty > 0 or cokeqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
+					drugsChecker = drugsChecker + 1
 				end
 			end
 			if Config.SellOpiu then
 				if opiuqty > 0 or opiuqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
+					drugsChecker = drugsChecker + 1
 				end
+			end
+			
+			--Drugs Checker
+			if drugsChecker == 0 then
+				TriggerClientEvent('nomoredrugs', _source)
+			else
+				drugsChecker = 0
 			end
 		end
 	else

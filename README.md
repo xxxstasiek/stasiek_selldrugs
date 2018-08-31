@@ -41,6 +41,14 @@ Sorry for my english.
 	Config.SellCoke = true	-- if true, players can sell coke
 	
 	Config.SellOpiu = true	-- if true, players can sell opium
+	
+	Config.WeedPrice = 50	-- sell price for single, not pooch(black money)
+	
+	Config.MethPrice = 70	-- sell price for single, not pooch (black money)
+	
+	Config.CokePrice = 90	-- sell price for single, not pooch (black money)
+	
+	Config.OpiuPrice = 110	-- sell price for single, not pooch (black money)
 
 2. You can edit 'locales/en.lua' to your language and send it to fivem forum on my topic
 

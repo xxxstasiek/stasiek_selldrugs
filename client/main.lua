@@ -150,6 +150,7 @@ AddEventHandler('sold', function()
 	secondsRemaining = 0
 end)
 
+--Sold info
 RegisterNetEvent('showSellInfo')
 AddEventHandler('showSellInfo', function(count, blackMoney, drugType)
 	if drugType == "weedpooch" then
@@ -171,21 +172,25 @@ AddEventHandler('showSellInfo', function(count, blackMoney, drugType)
 	end
 end)
 
+--Info that you dont have drugs
 RegisterNetEvent('nomoredrugs')
 AddEventHandler('nomoredrugs', function()
 	ESX.ShowNotification(_U('no_more_drugs'))
 	playerHasDrugs = false
+	sold = false
+	selling = false
+	secondsRemaining = 0
 end)
 
+--Show help notification ("PRESS E...")
 RegisterNetEvent('playerhasdrugs')
 AddEventHandler('playerhasdrugs', function()
 	ESX.ShowHelpNotification(_U('input'))
 	playerHasDrugs = true
 end)
 
-
---Dispatch begin, only if Config.CallCops = true
-
+--DISPATCH BEGIN (better do not touch)
+--Only if Config.CallCops = true
 GetPlayerName()
 RegisterNetEvent('outlawNotify')
 AddEventHandler('outlawNotify', function(alert)
@@ -296,5 +301,4 @@ RegisterNetEvent('drugsEnable')
 AddEventHandler('drugsEnable', function()
 	pedIsTryingToSellDrugs = true
 end)
-
---Dispatch end
+--DISPATCH END
