@@ -190,7 +190,7 @@ AddEventHandler('sell:check', function()
 		end
 	end
 	
-	local drugsChecker
+	local drugsChecker = 0
 	if cops >= Config.CopsRequiredToSell then
 		if Config.SellPooch or Config.SellSingle then
 			if Config.SellWeed then
