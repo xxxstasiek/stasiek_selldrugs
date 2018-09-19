@@ -11,16 +11,12 @@ Citizen.CreateThread(function()
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
-end)
 
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(xPlayer)
-	PlayerData = xPlayer
-end)
+	while ESX.GetPlayerData().job == nil do
+		Citizen.Wait(10)
+	end
 
-RegisterNetEvent('esx:setJob')
-AddEventHandler('esx:setJob', function(job)
-  PlayerData.job = job
+	PlayerData = ESX.GetPlayerData()
 end)
 
 --TIME TO SELL
@@ -59,7 +55,8 @@ Citizen.CreateThread(function()
 				 				currentped = pos
 							 	if distance <= 3 and ped  ~= GetPlayerPed(-1) and ped ~= oldped and IsControlJustPressed(1, 38) then
 									TriggerServerEvent('sell:check')
-									if playerHasDrugs and IsControlJustPressed(1, 38) and sold == false and selling == false then 
+									-- Wait(1000)
+									if playerHasDrugs and sold == false and selling == false then 
 										--PED REJECT OFFER
 										local random = math.random(1, Config.PedRejectPercent)
 										-- print(random)
@@ -69,9 +66,9 @@ Citizen.CreateThread(function()
 											--PED CALLING COPS
 											if Config.CallCops then
 												local randomReport = math.random(1, Config.CallCopsPercent)
-												-- print(randomReport)
+												print(Config.CallCopsPercent)
 												if randomReport == Config.CallCopsPercent then
-													TriggerServerEvent("drugsNotify")
+													TriggerServerEvent('drugsNotify')
 												end
 											end
 											TriggerEvent("sold")
@@ -115,7 +112,7 @@ Citizen.CreateThread(function()
 				FreezeEntityPosition(oldped,false)
 			end
 			--SUCCESS
-			if secondsRemaining <= 0 then			
+			if secondsRemaining <= 1 then			
 				SetEntityAsMissionEntity(oldped)
 				SetPedAsNoLongerNeeded(oldped)
 				FreezeEntityPosition(oldped,false)
@@ -131,8 +128,9 @@ Citizen.CreateThread(function()
 		Wait(0)	
 		if sold then
 			TriggerServerEvent('sell:sellDrugs')
-			sold = false
 			selling = false
+			playerHasDrugs = false
+			sold = false
 		end
 	end	
 end)		
@@ -210,7 +208,7 @@ end
 local timer = 1 --in minutes - Set the time during the player is outlaw
 local showOutlaw = true --Set if show outlaw act on map
 local blipTime = 25 --in second
-local showcopsmisbehave = false --show notification when cops steal too
+local showcopsmisbehave = true --show notification when cops steal too
 --End config
 
 local timing = timer * 60000 --Don't touche it
@@ -248,7 +246,7 @@ Citizen.CreateThread( function()
 					if s2 == 0 then
 						TriggerServerEvent('drugsInProgressS1', street1, sex)
 					elseif s2 ~= 0 then
-						TriggerServerEvent("drugsInProgress", street1, street2, sex)
+						TriggerServerEvent('drugsInProgress', street1, street2, sex)
 					end
 				end)
 				Wait(3000)
@@ -265,7 +263,7 @@ Citizen.CreateThread( function()
 					if s2 == 0 then
 						TriggerServerEvent('drugsInProgressS1', street1, sex)
 					elseif s2 ~= 0 then
-						TriggerServerEvent("drugsInProgress", street1, street2, sex)
+						TriggerServerEvent('drugsInProgress', street1, street2, sex)
 					end
 				end)
 				Wait(3000)
@@ -277,13 +275,15 @@ end)
 
 RegisterNetEvent('drugsPlace')
 AddEventHandler('drugsPlace', function(tx, ty, tz)
-	if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
+print("12345")
+	if PlayerData.job.name == 'police' then
 		local transT = 250
 		local Blip = AddBlipForCoord(tx, ty, tz)
 		SetBlipSprite(Blip,  10)
 		SetBlipColour(Blip,  1)
 		SetBlipAlpha(Blip,  transT)
-		SetBlipAsShortRange(Blip,  1)
+		SetBlipAsShortRange(Blip,  false)
+		print("123456")
 		while transT ~= 0 do
 			Wait(blipTime * 4)
 			transT = transT - 1

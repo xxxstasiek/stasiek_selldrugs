@@ -144,13 +144,13 @@ AddEventHandler('sell:sellDrugs', function()
 	end
 	
 	if drugType=="weedpooch" then	--pooch
-		blackMoney = Config.WeedPrice * 6 * x
+		blackMoney = Config.WeedPrice * 5 * x
 	elseif drugType=="methpooch" then
-		blackMoney = Config.MethPrice * 6 * x
+		blackMoney = Config.MethPrice * 5 * x
 	elseif drugType=="cokepooch" then
-		blackMoney = Config.CokePrice * 6 * x
+		blackMoney = Config.CokePrice * 5 * x
 	elseif drugType=="opiumpooch" then
-		blackMoney = Config.OpiuPrice * 6 * x
+		blackMoney = Config.OpiuPrice * 5 * x
 	elseif drugType=="weed" then	--single
 		blackMoney = Config.WeedPrice * x
 	elseif drugType=="meth" then
@@ -180,7 +180,6 @@ AddEventHandler('sell:check', function()
 	local cokeqtySingle = xPlayer.getInventoryItem('coke').count
 	local opiuqty = xPlayer.getInventoryItem('opium_pooch').count
 	local opiuqtySingle = xPlayer.getInventoryItem('opium').count
-	
 	--check cops count on server
 	local cops = 0
 	for i=1, #xPlayers, 1 do
@@ -190,40 +189,33 @@ AddEventHandler('sell:check', function()
 		end
 	end
 	
-	local drugsChecker = 0
 	if cops >= Config.CopsRequiredToSell then
 		if Config.SellPooch or Config.SellSingle then
 			if Config.SellWeed then
 				if weedqty > 0 or weedqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
-					drugsChecker = drugsChecker + 1
+					return
 				end
 			end
 			if Config.SellMeth then
 				if methqty > 0 or methqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
-					drugsChecker = drugsChecker + 1
+					return
 				end
 			end
 			if Config.SellCoke then
 				if cokeqty > 0 or cokeqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
-					drugsChecker = drugsChecker + 1
+					return
 				end
 			end
 			if Config.SellOpiu then
 				if opiuqty > 0 or opiuqtySingle > 0 then
 					TriggerClientEvent('playerhasdrugs', _source)
-					drugsChecker = drugsChecker + 1
+					return
 				end
 			end
-			
-			--Drugs Checker
-			if drugsChecker == 0 then
-				TriggerClientEvent('nomoredrugs', _source)
-			else
-				drugsChecker = 0
-			end
+			TriggerClientEvent('nomoredrugs', _source)
 		end
 	else
 		TriggerClientEvent('esx:showNotification', _source, _U('must_be') .. Config.CopsRequiredToSell .. _U('to_sell_drugs'))
