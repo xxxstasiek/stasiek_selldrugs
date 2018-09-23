@@ -38,6 +38,7 @@ Citizen.CreateThread(function()
 	while true do
 		Wait(0)
 		local player = GetPlayerPed(-1)
+		local pid = PlayerPedId()
   		local playerloc = GetEntityCoords(player, 0)
 		local handle, ped = FindFirstPed()
 		local success
@@ -102,7 +103,7 @@ Citizen.CreateThread(function()
 			local player = GetPlayerPed(-1)
   			local playerloc = GetEntityCoords(player, 0)
 			local distance = GetDistanceBetweenCoords(pos1.x, pos1.y, pos1.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
-			
+			local pid = PlayerPedId()
 			--TOO FAR
 			if distance > 5 then
 				ESX.ShowNotification(_U('too_far_away'))
@@ -117,9 +118,18 @@ Citizen.CreateThread(function()
 				SetPedAsNoLongerNeeded(oldped)
 				FreezeEntityPosition(oldped,false)
 				sold = true
+				StopAnimTask(pid, "amb@prop_human_bum_bin@idle_b","idle_d", 1.0)
 			end	
+			
+			if secondsRemaining == 4 and Config.PlayAnimation then
+				RequestAnimDict("amb@prop_human_bum_bin@idle_b")
+				while (not HasAnimDictLoaded("amb@prop_human_bum_bin@idle_b")) do 
+					Citizen.Wait(0) 
+				end
+				TaskPlayAnim(pid,"amb@prop_human_bum_bin@idle_b","idle_d",100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0)
+			end
 		end	
-	end	
+	end
 end)	
 
 
