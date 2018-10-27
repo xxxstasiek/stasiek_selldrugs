@@ -6,6 +6,7 @@ Locales ['pl'] = {
 	['remained'] = 'Pozostało ~b~ ',
 	['you_have_sold'] = 'Sprzedałeś ',
 	['must_be'] = 'Musi być minimalnie~b~ ',
+	['too_far_away_from_city'] = 'Jesteś ~r~za daleko~w~ miasta,  tutaj nikt nie kupuje ~g~dragow!',
 	['to_sell_drugs'] = ' ~w~policjantów aby sprzedawać ~g~dragi!',
 	['weed_pooch'] = ' paczek ~g~marichuany~s~ za~r~ ',
 	['meth_pooch'] = ' paczek ~g~metamfetaminy~s~ za~r~ ',

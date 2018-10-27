@@ -6,6 +6,7 @@ Locales ['it'] = {
 	['remained'] = 'Rimasti~b~ ',
 	['you_have_sold'] = 'Hai venduto ',
 	['must_be'] = 'Send me your translation~b~ ',
+	['too_far_away_from_city'] = 'You are ~r~too far away~w~ from the ~g~city!',
 	['to_sell_drugs'] = ' ~w~or edit ~g~script!',
 	['weed_pooch'] = ' sacchetti di ~g~erba~s~ a~r~ ',
 	['meth_pooch'] = ' sacchetti di ~g~metanfetamina~s~ a~r~ ',

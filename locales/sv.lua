@@ -6,6 +6,7 @@ Locales ['sv'] = {
 	['remained'] = 'Tid kvar~b~ ',
 	['you_have_sold'] = 'Du har sålt ',
 	['must_be'] = 'Send me your translation~b~ ',
+	['too_far_away_from_city'] = 'You are ~r~too far away~w~ from the ~g~city!',
 	['to_sell_drugs'] = ' ~w~or edit ~g~script!',
 	['weed_pooch'] = ' ~g~Gräs~s~ för~r~ ',
 	['meth_pooch'] = ' ~g~Metamfetamin~s~ för~r~ ',

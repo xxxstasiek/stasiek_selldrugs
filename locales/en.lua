@@ -6,6 +6,7 @@ Locales ['en'] = {
 	['remained'] = 'Remained~b~ ',
 	['you_have_sold'] = 'You have sold ',
 	['must_be'] = 'It must be min ~b~ ',
+	['too_far_away_from_city'] = 'You are ~r~too far away~w~ from the ~g~city!',
 	['to_sell_drugs'] = ' ~w~to sell ~g~drugs!',
 	['weed_pooch'] = ' pooch of ~g~weed~s~ for~r~ ',
 	['meth_pooch'] = ' pooch of ~g~meth~s~ for~r~ ',
