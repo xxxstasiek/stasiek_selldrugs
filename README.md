@@ -64,5 +64,5 @@ My plugin is based on 'onlyserenity/drugsToNPCs' and 'nynjardin/outlawalert'
 
 
 # ScreenShots, Forum & More
-https://strefaparadise.pl/forums/topic/fivem-esx-stasiek_selldrugs/
-https://forum.fivem.net/t/esx-stasiek-selldrugs-to-npc-weed-meth-dispatch-new/150547?u=stasiek
+https://discord.gg/D7VGuEk
+https://strefaparadise.pl
