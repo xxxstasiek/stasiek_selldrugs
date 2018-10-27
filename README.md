@@ -22,7 +22,7 @@ Sorry for my english.
 	
 	Config.TimeToSell = 10  -- how many seconds player have to wait/stand near ped
 	
-	Config.CallCops = true  -- if true and if ped reject your offer then there is 40% chance that ped will call cops
+	Config.CallCops = true  -- if true and if ped reject your offer then there is [Config.CallCopsPercent]% to call cops
 	
 	Config.CopsRequiredToSell = 1 -- required cops on server to sell drugs
 	
@@ -49,6 +49,10 @@ Sorry for my english.
 	Config.CokePrice = 90	-- sell price for single, not pooch (black money)
 	
 	Config.OpiuPrice = 110	-- sell price for single, not pooch (black money)
+	
+	Config.DistanceFromCity = 10000 -- set distance that player cant sell drugs too far from city
+	
+	Config.CityPoint = {x= -255.94, y= -983.93, z= 30.21}
 
 2. You can edit 'locales/en.lua' to your language and send it to fivem forum on my topic
 
