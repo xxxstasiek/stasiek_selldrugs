@@ -159,7 +159,7 @@ AddEventHandler('sellDrugs', function()
 	
 	xPlayer.addAccountMoney('black_money', blackMoney)
 	TriggerClientEvent('sold', _source)
-	TriggerClientEvent('esx:showNotification', _source, _U('you_have_sold') .. '~b~'..x..'~w~' .. _U('weed_pooch') .. blackMoney .. '$')
+	TriggerClientEvent('esx:showNotification', _source, _U('you_have_sold') .. '~b~'..x..'~w~' .. _U(drugtype) .. blackMoney .. '$')
 end)
 
 
