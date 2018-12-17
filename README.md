@@ -18,42 +18,43 @@ Sorry for my english.
 # About
 1. You can edit this variables in config.lua 
 
-	Config.Locale = 'en'    -- your language, It would be nice if you send me your translation on fivem forum
+```
+Config.Locale = 'en'    -- your language, It would be nice if you send me your translation on fivem forum
 	
-	Config.TimeToSell = 10  -- how many seconds player have to wait/stand near ped
+Config.TimeToSell = 10  -- how many seconds player have to wait/stand near ped
 	
-	Config.CallCops = true  -- if true and if ped reject your offer then there is [Config.CallCopsPercent]% to call cops
+Config.CallCops = true  -- if true and if ped reject your offer then there is [Config.CallCopsPercent]% to call cops
 	
-	Config.CopsRequiredToSell = 1 -- required cops on server to sell drugs
+Config.CopsRequiredToSell = 1 -- required cops on server to sell drugs
 	
-	Config.CallCopsPercent = 1 -- (min1) if 1 cops will be called every time=100%, 2=50%, 3=33%, 4=25%, 5=20%
+Config.CallCopsPercent = 1 -- (min1) if 1 cops will be called every time=100%, 2=50%, 3=33%, 4=25%, 5=20%
 	
-	Config.PedRejectPercent = 1 -- (min1) if 1 ped reject offer=100%, 2=50%, 3=33%, 4=25%, 5=20%
+Config.PedRejectPercent = 1 -- (min1) if 1 ped reject offer=100%, 2=50%, 3=33%, 4=25%, 5=20%
 	
-	Config.SellPooch = true -- if true, players can sell pooch like weed_pooch, meth_pooch
+Config.SellPooch = true -- if true, players can sell pooch like weed_pooch, meth_pooch
 	
-	Config.SellSingle = true -- if true, players can sell single item like weed, meth	
+Config.SellSingle = true -- if true, players can sell single item like weed, meth	
 	
-	Config.SellWeed = true	-- if true, players can sell weed
+Config.SellWeed = true	-- if true, players can sell weed
 	
-	Config.SellMeth = true	-- if true, players can sell meth
+Config.SellMeth = true	-- if true, players can sell meth
 	
-	Config.SellCoke = true	-- if true, players can sell coke
+Config.SellCoke = true	-- if true, players can sell coke
 	
-	Config.SellOpiu = true	-- if true, players can sell opium
+Config.SellOpiu = true	-- if true, players can sell opium
 	
-	Config.WeedPrice = 50	-- sell price for single, not pooch(black money)
+Config.WeedPrice = 50	-- sell price for single, not pooch(black money)
 	
-	Config.MethPrice = 70	-- sell price for single, not pooch (black money)
+Config.MethPrice = 70	-- sell price for single, not pooch (black money)
 	
-	Config.CokePrice = 90	-- sell price for single, not pooch (black money)
+Config.CokePrice = 90	-- sell price for single, not pooch (black money)
 	
-	Config.OpiuPrice = 110	-- sell price for single, not pooch (black money)
+Config.OpiuPrice = 110	-- sell price for single, not pooch (black money)
 	
-	Config.DistanceFromCity = 10000 -- set distance that player cant sell drugs too far from city
+Config.DistanceFromCity = 10000 -- set distance that player cant sell drugs too far from city
 	
-	Config.CityPoint = {x= -255.94, y= -983.93, z= 30.21}
-
+Config.CityPoint = {x= -255.94, y= -983.93, z= 30.21}
+```
 2. You can edit 'locales/en.lua' to your language and send it to fivem forum on my topic
 
 3. In 'server/main.lua' at line 77 and 82  and in 'client/main.lua' in line 242 and 244 there's a lines you should change to your language!
