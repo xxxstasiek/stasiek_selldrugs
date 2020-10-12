@@ -1,4 +1,7 @@
-# stasiek_selldrugs
+# NEW VERSION HERE
+https://github.com/xxxstasiek/stasiek_selldrugsv2
+
+# stasiek_selldrugsv1
 [ESX stasiek_selldrugs] Sell Drugs to NPC +dispatch NEW!
 It’s 100% WORKING with ESX! Plugin has been created by Stasiek, witch allows player to sell drugs to npc/ped! + police/cops call/dispatch
 I would be proud if you send me your language translation!
