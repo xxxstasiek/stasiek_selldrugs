@@ -1,7 +1,7 @@
-# NEW VERSION HERE
+# NEW stasiek_selldrugsv2 VERSION HERE
 https://github.com/xxxstasiek/stasiek_selldrugsv2
 
-# stasiek_selldrugsv1
+# OLD stasiek_selldrugsv1
 [ESX stasiek_selldrugs] Sell Drugs to NPC +dispatch NEW!
 It’s 100% WORKING with ESX! Plugin has been created by Stasiek, witch allows player to sell drugs to npc/ped! + police/cops call/dispatch
 I would be proud if you send me your language translation!
@@ -64,8 +64,3 @@ Sorry for my english.
 4. You have to have weed_pooch or meth_pooch or coke_pooch or opium_pooch in your inventory and in your database in 'items' 
 
 My plugin is based on 'onlyserenity/drugsToNPCs' and 'nynjardin/outlawalert'
-
-
-# ScreenShots, Forum & More
-https://discord.gg/D7VGuEk
-https://strefaparadise.pl
